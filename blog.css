@@ -1,81 +1,68 @@
-/* stylelint-disable selector-list-comma-newline-after */
+/* ================================
+   Global Styles
+   ================================ */
 
-.blog-header {
-  line-height: 1;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.blog-header-logo {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: 2.25rem;
-}
-
-.blog-header-logo:hover {
-  text-decoration: none;
+html {
+  scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
 }
 
+/* ================================
+   Header & Navigation
+   ================================ */
+
+header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.blog-header-logo {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.nav-pills .nav-link {
+  color: #6c757d;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link:hover {
+  color: #007bff;
+  background-color: #f8f9fa;
+}
+
+.nav-pills .nav-link:active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* ================================
+   Typography
+   ================================ */
+
 .display-4 {
   font-size: 2.5rem;
 }
+
 @media (min-width: 768px) {
   .display-4 {
     font-size: 3rem;
   }
 }
 
-.nav-scroller {
-  position: relative;
-  z-index: 2;
-  height: 2.75rem;
-  overflow-y: hidden;
-}
-
-.nav-scroller .nav {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  padding-bottom: 1rem;
-  margin-top: -1px;
-  overflow-x: auto;
-  text-align: center;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-}
-
-.nav-scroller .nav-link {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-  font-size: .875rem;
-}
-
-.card-img-right {
-  height: 100%;
-  border-radius: 0 3px 3px 0;
-}
-
-.flex-auto {
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.h-250 { height: 250px; }
-@media (min-width: 768px) {
-  .h-md-250 { height: 250px; }
-}
-
-/*
- * Blog name and description
- */
 .blog-title {
   margin-bottom: 0;
   font-size: 2rem;
   font-weight: 400;
 }
+
 .blog-description {
   font-size: 1.1rem;
   color: #999;
@@ -87,39 +74,459 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Pagination */
-.blog-pagination {
-  margin-bottom: 4rem;
-}
-.blog-pagination > .btn {
-  border-radius: 2rem;
+/* ================================
+   Utility Classes
+   ================================ */
+
+.flex-auto {
+  flex: 0 0 auto;
 }
 
-/*
- * Blog posts
- */
+.h-250 {
+  height: 250px;
+}
+
+@media (min-width: 768px) {
+  .h-md-250 {
+    height: 250px;
+  }
+}
+
+.card-img-right {
+  height: 100%;
+  border-radius: 0 3px 3px 0;
+}
+/* ================================
+   Blog Posts
+   ================================ */
+
 .blog-post {
   margin-bottom: 4rem;
 }
-.blog-post-title {
-  margin-bottom: .25rem;
-  font-size: 2.5rem;
+
+/* ================================
+   Paper-like Publications Pages
+   ================================ */
+
+/* Container for paper effect */
+.blog-post.paper-style {
+  max-width: 850px;
+  margin: 3rem auto 4rem;
+  padding: 4rem;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 
+              0 4px 16px rgba(0, 0, 0, 0.08),
+              0 0 0 1px rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+  position: relative;
 }
+
+/* Paper texture overlay */
+.blog-post.paper-style::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(0, 0, 0, 0.01) 1px, transparent 1px),
+    linear-gradient(rgba(0, 0, 0, 0.01) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  border-radius: 2px;
+  opacity: 0.3;
+}
+
+/* Typography improvements for paper style */
+.blog-post.paper-style h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2.25rem;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+  text-align: center;
+  font-weight: 700;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.blog-post.paper-style .blog-post-meta {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+  color: #666;
+  font-style: italic;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+/* Section styling for paper */
+.blog-post.paper-style section {
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+}
+
+.blog-post.paper-style section h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.blog-post.paper-style section p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+.blog-post.paper-style section ul {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.blog-post.paper-style section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-post.paper-style section ul li strong {
+  color: #2c3e50;
+}
+
+/* Button styling in paper context */
+.blog-post.paper-style .btn {
+  margin: 0.25rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Footer navigation in paper */
+.blog-post.paper-style > div.border-top {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e9ecef !important;
+}
+
+/* Responsive adjustments for paper style */
+@media (max-width: 992px) {
+  .blog-post.paper-style {
+    padding: 3rem 2.5rem;
+    margin: 2rem auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-post.paper-style {
+    padding: 2rem 1.5rem;
+    margin: 1rem auto;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .blog-post.paper-style h1 {
+    font-size: 1.75rem;
+  }
+  
+  .blog-post.paper-style section h2 {
+    font-size: 1.35rem;
+  }
+  
+  .blog-post.paper-style section p,
+  .blog-post.paper-style section ul {
+    font-size: 1rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 576px) {
+  .blog-post.paper-style {
+    padding: 1.5rem 1rem;
+  }
+  
+  .blog-post.paper-style h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.blog-post-title {
+  margin-bottom: 0.25rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .blog-post-title {
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+  }
+}
+
 .blog-post-meta {
   margin-bottom: 1.25rem;
   color: #999;
 }
 
-/*
- * Footer
- */
+/* Blog Pagination */
+.blog-pagination {
+  margin-bottom: 4rem;
+}
+
+.blog-pagination > .btn {
+  border-radius: 2rem;
+}
+
+/* ================================
+   Footer
+   ================================ */
+
 .blog-footer {
   padding: 2.5rem 0;
   color: #999;
   text-align: center;
   background-color: #f9f9f9;
-  border-top: .05rem solid #e5e5e5;
+  border-top: 0.05rem solid #e5e5e5;
 }
+
 .blog-footer p:last-child {
   margin-bottom: 0;
+}
+
+/* ================================
+   Responsive Design
+   ================================ */
+
+@media (max-width: 768px) {
+  .resume-item .d-flex {
+    flex-direction: column;
+  }
+
+  .resume-item .text-right {
+    text-align: left !important;
+    margin-top: 0.5rem;
+  }
+
+  .resume-section h2 {
+    font-size: 2rem;
+  }
+
+  .resume-section h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ================================
+   Resume Section
+   ================================ */
+
+.resume-section {
+  background-color: #ffffff;
+}
+
+/* Resume Headers */
+.resume-section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.resume-section h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.resume-section h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 0.25rem;
+}
+
+/* Resume Item Cards */
+.resume-item {
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid #e9ecef;
+  background-color: #fafafa;
+  border-radius: 0 8px 8px 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.resume-item:hover {
+  border-left-color: #007bff;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateX(2px);
+}
+
+.resume-item .d-flex {
+  margin-bottom: 1rem;
+}
+
+/* Resume Item Content */
+.resume-item .font-weight-bold {
+  color: #495057;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.resume-item p.mb-2 {
+  color: #6c757d;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.resume-item .text-muted {
+  font-size: 0.9rem;
+}
+
+.resume-item small {
+  font-size: 0.85rem;
+}
+
+/* Project Sections within Resume Items */
+.resume-item .ml-3 {
+  margin-left: 0 !important;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.resume-item .ml-3:first-child {
+  margin-top: 0.5rem;
+  padding-top: 0;
+  border-top: none;
+}
+
+/* Skills Section */
+.skills-list {
+  line-height: 2.5;
+}
+
+.skills-list .badge {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+/* Anchor Links */
+#resume,
+#education,
+#experience,
+#skills,
+#blog,
+#about {
+  scroll-margin-top: 20px;
+}
+
+/* ================================
+   Timeline Design
+   ================================ */
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 77px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, #007bff, #6c757d);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 120px;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 70px;
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #007bff;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px #007bff;
+  z-index: 1;
+}
+
+.timeline-year {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  font-weight: 700;
+  color: #007bff;
+  font-size: 1rem;
+  writing-mode: horizontal-tb;
+}
+
+.timeline-content {
+  background: #fafafa;
+  border-left: 3px solid #e9ecef;
+  border-radius: 0 6px 6px 0;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  border-left-color: #007bff;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateX(2px);
+}
+
+.timeline-content h4 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-content a {
+  font-size: clamp(0.7rem, 1.5vw, 0.95rem);
+  font-weight: 600;
+}
+
+.timeline-content .text-muted {
+  font-size: clamp(0.65rem, 1.3vw, 0.85rem);
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+  
+  .timeline-item {
+    padding-left: 60px;
+  }
+  
+  .timeline-marker {
+    left: 6px;
+  }
+  
+  .timeline-year {
+    display: none;
+  }
 }

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="MOLE: Motion Leaks Through Smartwatch Sensors">
+  <meta name="author" content="Zhitong Yan">
+  
+  <title>MOLE Research Paper - Zhitong Yan</title>
+  
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+  <link href="../blog.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="bg-white border-bottom mb-4">
+    <div class="container">
+      <div class="py-3 d-flex justify-content-between align-items-center">
+        <h2 class="blog-header-logo mb-0 text-primary">Zhitong Yan</h2>
+        <a class="btn btn-sm btn-outline-secondary" href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <article class="blog-post paper-style mb-5">
+      <h1 class="blog-post-title mb-3">MOLE: Motion Leaks Through Smartwatch Sensors</h1>
+      <p class="blog-post-meta text-muted mb-4">Research Paper • 2017</p>
+
+      <div class="mb-4">
+        <a href="https://synrg.csl.illinois.edu/papers/mole.pdf" target="_blank" class="btn btn-primary">
+          Read Full Paper (PDF) →
+        </a>
+      </div>
+
+      <section class="mb-5">
+        <h2>Abstract</h2>
+        <p>This research paper investigates privacy implications of wearable device sensors by demonstrating how motion patterns captured by smartwatch accelerometers and gyroscopes can be used to infer typing behavior and potentially reveal sensitive information.</p>
+      </section>
+
+      <section class="mb-5">
+        <h2>Research Question</h2>
+        <p>Can motion sensor data from smartwatches leak information about what users are typing on nearby keyboards? Our research demonstrates that attackers can exploit these sensors to infer keystroke patterns with concerning accuracy.</p>
+      </section>
+
+      <section class="mb-5">
+        <h2>Methodology</h2>
+        <ul>
+          <li><strong>Data Collection:</strong> Built a web server using MongoDB to collect terabyte-scale sensor data from smartwatches</li>
+          <li><strong>Android Wear App:</strong> Developed energy-efficient app to capture accelerometer and gyroscope data via WiFi</li>
+          <li><strong>Algorithm Design:</strong> Modified Robust Linear Regression to eliminate time deviation</li>
+          <li><strong>Pattern Recognition:</strong> Designed Frequent Sequence Mining algorithm to recognize sensor data patterns</li>
+          <li><strong>Chrome Extension:</strong> Captured query history as training labels for machine learning</li>
+        </ul>
+      </section>
+
+      <section class="mb-5">
+        <h2>Key Findings</h2>
+        <p>Our research demonstrated that:</p>
+        <ul>
+          <li>Smartwatch sensors can capture distinctive motion patterns during typing</li>
+          <li>These patterns can be analyzed to infer keystroke sequences</li>
+          <li>The attack works even when the smartwatch screen is off</li>
+          <li>Certain typing patterns are more vulnerable than others</li>
+        </ul>
+      </section>
+
+      <section class="mb-5">
+        <h2>Impact & Implications</h2>
+        <p>This research highlighted important privacy considerations for wearable devices and contributed to the broader conversation about sensor security. The findings informed recommendations for:</p>
+        <ul>
+          <li>Operating system-level sensor access controls</li>
+          <li>User awareness about sensor permissions</li>
+          <li>Hardware-level privacy protections</li>
+          <li>Future smartwatch security design</li>
+        </ul>
+      </section>
+
+      <section class="mb-5">
+        <h2>Research Context</h2>
+        <p>This work was conducted during my research internship at Purdue University in 2017, focusing on security and privacy implications of emerging IoT and wearable technologies.</p>
+      </section>
+
+      <div class="mt-5 pt-5 border-top">
+        <a href="../index.html" class="btn btn-outline-primary">← Back to Home</a>
+        <a href="../index.html#publications" class="btn btn-outline-secondary ml-2">View All Publications</a>
+      </div>
+    </article>
+  </div>
+
+  <footer class="blog-footer mt-5">
+    <p>© 2024 Zhitong Yan</p>
+    <p><a href="../index.html">Back to Home</a></p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
